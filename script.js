@@ -8,7 +8,6 @@ drumPads.forEach((pad) => {
   });
 });
 
-// HANDLE KEY PRESS
 document.addEventListener("keydown", (e) => {
   const key = e.key.toUpperCase();
   const audio = document.getElementById(key);
@@ -22,9 +21,9 @@ function playSound(audio, pad) {
   audio.currentTime = 0;
   audio.play();
 
-  display.innerText = audio.src
+  display.innerText = `You played a sound ${audio.src
     .replace("https://cdn.freecodecamp.org/curriculum/drum/", "")
-    .replace(".mp3", "");
+    .replace(".mp3", "")}`;
 
   pad.classList.add("active");
   setTimeout(() => pad.classList.remove("active"), 150);
